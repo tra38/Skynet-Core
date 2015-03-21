@@ -1,5 +1,5 @@
 class Character
-attr_reader :purpose, :motivation, :methodology, :evaluation
+attr_reader :purpose, :motivation, :methodology, :evaluation :enemy
 end
 
 class Protagonist < Character #the "Hero", the guy who wants stuff done
@@ -19,6 +19,8 @@ def initialize
   @evaluation = ["Proven", "Effect"]
   #Proven - believes that his ideas are correct because they have been shown to be correct multiple times.
   #Effect - cares about how to solve the problem, and does not worry about what caused the problem in the first place!
+  
+  @enemy = "Antagonist"
   end
 end
 
@@ -39,6 +41,8 @@ def initialize
   @evaluation = ["Unproven, Cause"]
   #Unproven - believes that his ideas may still be actually wrong, no matter how many previous tests are done
   #Cause - cares about addressing the root causes of the problem, and ignores the actual problem.
+  
+  @enemy = "Protagonist"
 end
 end
 
@@ -54,10 +58,35 @@ def initialize
   
   @methodology = ["Production", "Reevaluation"]
   #Production - determines what the current situation is by ruling out what explainations are "impossible"
-  #Reevaluation - continually reexamines and reevaluates the current situation
+  #Reevaluation - continually reexamines and reinterprets the current situation
   
   @evaluation = ["Determination","Unending"]
   #Determination - uses inferences to draws conclusions
   #Unending - believes that Society can live forever and will live forever
+  
+  @enemy = "Guardian"
+end
+end
+
+class Guardian < Character #The Moral Conscience, out to guide others to the "light side"
+def initialize
+  @purpose = ["Equity", "Projection"]
+  #Equity - promotes fairness and balance
+  #Projection - prepares for the most likely and probable outcomes
+  
+  @motivation = ["Conscience", "Help"]
+  #Conscience - forgoing immedidate benefits, because of future consequences
+  #Help - helping somebody else's plans, either intentionally or by accident
+  
+  @methodology = ["Reduction", "Evaluation"]
+  #Reduction - determines what the current situation is by weighing odds carefully and choosing the most likely explaination
+  #Evaluation - interprets the current situation to determine its meaning, and then sticks to that interpertion
+  #forever.
+  
+  @evaluation = ["Expectation", "Ending"]
+  #Expectation - anticipiates what is going to happen in the future
+  #Ending - believes that Society will end and is concerned about the aftermath
+  
+  @enemy = "Contagonist"
 end
 end
