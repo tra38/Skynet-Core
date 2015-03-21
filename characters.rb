@@ -1,15 +1,9 @@
 class Character
-attr_accessor :purpose, :motivation, :methodology, :evaluation
+attr_reader :purpose, :motivation, :methodology, :evaluation
+end
 
+class Protagonist < Character #the "Hero", the guy who wants stuff done
 def initialize
-set_up_traits
-end
-
-end
-
-class Protagonist < Character
-private
-def set_up_traits
   @purpose = ["Knowledge", "Actuality"]
   #Knowledge - dogmatism and slavish adherence to "orthodoxy"
   #Actuality - knows how the world really is
@@ -28,9 +22,8 @@ def set_up_traits
   end
 end
 
-class Antagonist < Character
-private
-def set_up_traits
+class Antagonist < Character #the "Villian", the guy standing in the way of the Protagonist
+def initialize
   @purpose = ["Thought", "Perception"]
   #Thought - Free-thinker, able to consider an issue from multiple perspectives
   #Perception - knows only what the world SEEMS to be
@@ -46,5 +39,25 @@ def set_up_traits
   @evaluation = ["Unproven, Cause"]
   #Unproven - believes that his ideas may still be actually wrong, no matter how many previous tests are done
   #Cause - cares about addressing the root causes of the problem, and ignores the actual problem.
+end
+end
+
+class Contagonist < Character #The Tempter, out to convince others to join the "dark side"
+def initialize
+  @purpose = ["Inequity", "Speculation"]
+  #Inequity - promotes unfairness or imbalance
+  #Speculation - prepares for all potential and possible ouctomes
+  
+  @motivation = ["Temptation", "Hinder"]
+  #Temptation - embrace immedidate benefits, without worrying about the future consequences
+  #Hinder - undermining somebody else's plans, either intentionally or by accident
+  
+  @methodology = ["Production", "Reevaluation"]
+  #Production - determines what the current situation is by ruling out what explainations are "impossible"
+  #Reevaluation - continually reexamines and reevaluates the current situation
+  
+  @evaluation = ["Determination","Unending"]
+  #Determination - uses inferences to draws conclusions
+  #Unending - believes that Society can live forever and will live forever
 end
 end
