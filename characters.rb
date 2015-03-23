@@ -1,5 +1,5 @@
 class Character
-attr_reader :purpose, :motivation, :methodology, :evaluation :enemy
+attr_reader :purpose, :motivation, :methodology, :evaluation, :enemy
 end
 
 class Protagonist < Character #the "Hero", the guy who wants stuff done
@@ -20,7 +20,7 @@ def initialize
   #Proven - believes that his ideas are correct because they have been shown to be correct multiple times.
   #Effect - cares about how to solve the problem, and does not worry about what caused the problem in the first place!
   
-  @enemy = "Antagonist"
+  @enemy = Antagonist
   end
 end
 
@@ -42,7 +42,7 @@ def initialize
   #Unproven - believes that his ideas may still be actually wrong, no matter how many previous tests are done
   #Cause - cares about addressing the root causes of the problem, and ignores the actual problem.
   
-  @enemy = "Protagonist"
+  @enemy = Protagonist
 end
 end
 
@@ -64,7 +64,7 @@ def initialize
   #Determination - uses inferences to draws conclusions
   #Unending - believes that Society can live forever and will live forever
   
-  @enemy = "Guardian"
+  @enemy = Guardian
 end
 end
 
@@ -87,6 +87,6 @@ def initialize
   #Expectation - anticipiates what is going to happen in the future
   #Ending - believes that Society will end and is concerned about the aftermath
   
-  @enemy = "Contagonist"
+  @enemy = Contagonist
 end
 end
