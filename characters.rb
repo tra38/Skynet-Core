@@ -90,3 +90,27 @@ def initialize
   @enemy = Contagonist
 end
 end
+
+##TODO: Test all characters below the comments. They are based off the previous characters, but there may be some typos.
+class Reason < Character #uses logic and rationality in desicion-making
+def initialize
+  @purpose = ["Ability", "Aware"]
+  #Ability - competent at an assigned task
+  #Aware - knows about things outside of himself
+  
+  @motiviation = ["Logic","Control"]
+  #Logic - uses rationality to understands the world
+  #Control - focused, deliberate actions
+  
+  @methodology = ["Probablity","Inaction"]
+  #Probablity - on believes in only what is likely
+  #Inaction - prefers to take no action
+  
+  @evaluation = ["Theory","Trust"]
+  #Theory - wants to develop a fully-formed casual relationship to explain what is going on, and refuses to trust
+  #illogical fads like 'common sense'.
+  #Trust - accepts without any proof (if it is logically follows from the theory, then it must be true!)
+  
+  @enemy = Emotion
+end
+end
