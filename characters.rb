@@ -160,21 +160,21 @@ end
 
 class Skeptic < Character #the "Doubter", thinks his boss does not know what he is doing
   def initialize
-     @purpose = ["Order","Inertia"]
-    #Order - Supports stability and organization
-    #Inertia - Preference for the status quo
+     @purpose = ["Chaos","Change"]
+    #Order - Supports random change and disorder
+    #Change - Wants the status quo overturned
     
-    @motivation = ["Faith","Support"]
-    #Faith - accepts something as certain without need for any sort of proof (emotional or logical)
-    #Support - providing indirect assistance to another character
+    @motivation = ["Disbelief","Oppose"]
+    #Disbelief - actively disbelieves in something, and tries to inform the whole world about how much he disbelieves
+    #Oppose - indirectly speaks out against another person's efforts
     
-    @methodology = ["Deduction","Acceptance"]
-    #Deduction- uses deductive reasoning
-    #Acceptance - will tolerate change and adapt to them
+    @methodology = ["Induction","Nonacceptance"]
+    #Induction - uses deductive reasoning
+    #Nonacceptance - will refuse to accept change
     
-    @evaluation = ["Accurate","Result"]
-    #Accurate - within acceptable tolerances, "good enough"
-    #Result - cares about the outcomes and consequences of actions
+    @evaluation = ["Nonaccurate","Process"]
+    #Nonaccurate - no acceptable tolerances, perfectionism
+    #Process - cares about making sure actions are done properly, with no worry about the consequences of said action.
     
     @enemy = Sidekick
   end
