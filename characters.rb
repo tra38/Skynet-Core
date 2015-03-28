@@ -134,3 +134,5 @@ def initialize
   #Test - wants to conduct trials and investigations to determine if something is true (using those oh-so-reliable hunches)
   
   @enemy = Reason
+end
+end
