@@ -92,7 +92,7 @@ end
 end
 
 ##TODO: Test all characters below the comments. They are based off the previous characters, but there may be some typos.
-class Reason < Character #uses logic and rationality in desicion-making
+class Reason < Character #the "Spock", uses logic and rationality in desicion-making
 def initialize
   @purpose = ["Ability", "Aware"]
   #Ability - competent at an assigned task
@@ -103,14 +103,34 @@ def initialize
   #Control - focused, deliberate actions
   
   @methodology = ["Probablity","Inaction"]
-  #Probablity - on believes in only what is likely
+  #Probablity - only believes in only what is likely
   #Inaction - prefers to take no action
   
   @evaluation = ["Theory","Trust"]
-  #Theory - wants to develop a fully-formed casual relationship to explain what is going on, and refuses to trust
-  #illogical fads like 'common sense'.
+  #Theory - wants to develop a fully-formed casual relationship to explain what is going on, and refuses to accept
+  #irrational appeals to "common sense"
   #Trust - accepts without any proof (if it is logically follows from the theory, then it must be true!)
   
   @enemy = Emotion
 end
 end
+
+class Emotion < Character
+def initialize
+  @purpose = ["Desire","Self-Aware"]
+  #Desire - wants to improve his life
+  #Self-Aware - knows about his own self
+  
+  @motivation = ["Feeling","Uncontrolled"]
+  #Feeling - can emotionally sense if something or someone is "right"
+  #Uncontrolled - will spend all his energy in all directions at once  
+  
+  @methodology = ["Possibility","Protection"]
+  #Possibility - believes in what is possible
+  #Protection - will take action to defend himself from possible threats
+
+  @evaluation = ["Hunch","Test"]
+  #Hunch - uses intitution to determine what is going on, without need for such petty things like actual evdience
+  #Test - wants to conduct trials and investigations to determine if something is true (using those oh-so-reliable hunches)
+  
+  @enemy = Reason
