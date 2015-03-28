@@ -91,7 +91,6 @@ def initialize
 end
 end
 
-##TODO: Test all characters below the comments. They are based off the previous characters, but there may be some typos.
 class Reason < Character #the "Spock", uses logic and rationality in desicion-making
 def initialize
   @purpose = ["Ability", "Aware"]
@@ -115,7 +114,7 @@ def initialize
 end
 end
 
-class Emotion < Character
+class Emotion < Character #uses passion and intuition in desicion-making
 def initialize
   @purpose = ["Desire","Self-Aware"]
   #Desire - wants to improve society
@@ -130,9 +129,53 @@ def initialize
   #Protection - will take action to defend himself from possible threats
 
   @evaluation = ["Hunch","Test"]
-  #Hunch - uses intitution to determine what is going on, without need for such petty things like actual evdience
+  #Hunch - uses intuition to determine what is going on, without need for such petty things like actual evdience
   #Test - wants to conduct trials and investigations to determine if something is true (using those oh-so-reliable hunches)
   
   @enemy = Reason
 end
+end
+
+class Sidekick < Character #a die-hard supporter of another character's actions and goals
+  def initialize
+    @purpose = ["Order","Inertia"]
+    #Order - Supports stability and organization
+    #Inertia - Preference for the status quo
+    
+    @motivation = ["Faith","Support"]
+    #Faith - accepts something as certain without need for any sort of proof (emotional or logical)
+    #Support - providing indirect assistance to another character
+    
+    @methodology = ["Deduction","Acceptance"]
+    #Deduction- uses deductive reasoning
+    #Acceptance - will tolerate change and adapt to them
+    
+    @evaluation = ["Accurate","Result"]
+    #Accurate - within acceptable tolerances, "good enough"
+    #Result - cares about the outcomes and consequences of actions
+    
+    @enemy = Skeptic
+  end
+end
+
+class Skeptic < Character #the "Doubter", thinks his boss does not know what he is doing
+  def initialize
+     @purpose = ["Order","Inertia"]
+    #Order - Supports stability and organization
+    #Inertia - Preference for the status quo
+    
+    @motivation = ["Faith","Support"]
+    #Faith - accepts something as certain without need for any sort of proof (emotional or logical)
+    #Support - providing indirect assistance to another character
+    
+    @methodology = ["Deduction","Acceptance"]
+    #Deduction- uses deductive reasoning
+    #Acceptance - will tolerate change and adapt to them
+    
+    @evaluation = ["Accurate","Result"]
+    #Accurate - within acceptable tolerances, "good enough"
+    #Result - cares about the outcomes and consequences of actions
+    
+    @enemy = Sidekick
+  end
 end
