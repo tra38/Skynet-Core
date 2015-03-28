@@ -118,7 +118,7 @@ end
 class Emotion < Character
 def initialize
   @purpose = ["Desire","Self-Aware"]
-  #Desire - wants to improve his life
+  #Desire - wants to improve society
   #Self-Aware - knows about his own self
   
   @motivation = ["Feeling","Uncontrolled"]
