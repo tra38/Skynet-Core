@@ -25,7 +25,7 @@ def verb(trait,target = nil)
     "identified  #{target} as a legitimate target"].sample
     when "Pursuit"
     action = ["sought #{target}", "went after #{target}", "attempted to locate #{target}", "looked for #{target}",
-    "directed efforts against #{target}", "pursued #{targt}"].sample
+    "directed efforts against #{target}", "pursued #{target}"].sample
     end
   end
   return action
