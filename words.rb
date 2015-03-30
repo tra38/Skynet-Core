@@ -2,7 +2,7 @@ def verb(trait)
   action = nil
   case trait
   when "Knowledge"
-    action = ["relied on authoritative certainty", "remember what he taught himself","knew the held truths"].sample
+    action = ["relied on authoritative certainty", "remembered what he taught himself","knew the held truths"].sample
   when "Actuality"
     action = ["knew exactly what was going on","grasped the inevitable","had already predicted this"].sample
   when "Consider"
