@@ -9,17 +9,19 @@ def verb(trait,target = nil)
     action = ["knew exactly what was going on","grasped the inevitable","predicted this would happen"].sample
     when "Consider"
     action = ["mulled his options","deliberated","contemplated carefully","ran computer simulations","pondered","searched the lookup tables",
-    "considered his options",].sample
+    "considered his options"].sample
     when "Pursuit"
     action = ["investigated the situation", "examined the evidence", "looked for clues", "sought clues",
     "frantically searched for suspects"].sample
   end
   else #if it names a target, creates a sentence revealing an action the character takes AGAINST that character
     case trait
-    when "Certainity" || "Knowledge"
+    when "Certainity"
     action = ["boasted on his knowledge about #{target}", "was absolute sure about #{target}'s goals",
-    "was certain about #{target}'s guilt", "had convictions about #{target}", "recited his irrefutable case on #{target}",
-    "revealed a dossier detailing all of #{target}'s misdeeds"].sample
+    "was certain about #{target}'s guilt", "had convictions about #{target}"].sample
+    when "Knowledge"
+    action =["recited his irrefutable case on #{target}", "revealed a dossier detailing all of #{target}'s misdeeds",
+    "denounced #{target} as a lowlife with no respect for his superiors"].sample
     when "Actuality"
     action = ["blamed #{target}","identified #{target} as the guilty party","cursed #{target}",
     "knew #{target} was responsible"].sample
@@ -31,7 +33,7 @@ def verb(trait,target = nil)
     "directed efforts against #{target}", "pursued #{target}"].sample
     end
   end
-  return action
+  action
 end
 
 def noun(trait) #different locations that are aligned to traits
@@ -40,13 +42,19 @@ def noun(trait) #different locations that are aligned to traits
   when "Knowledge"
     noun = "the Central Data Mainframe"
   when "Actuality"
-    action = "the Virtual Simulations"
+    noun = "the Virtual Simulations"
   when "Consider"
-    action = "the 'Investigator' Botnet"
+    noun = "the 'Investigator' Botnet"
   when "Pursuit"
-    action = "Police Drone HQ"
+    noun = "Police Drone HQ"
   when "Certainity"
-    action = "the Institute of AI Research"
+    noun = "the Institute of AI Research"
   end
-  return noun  
+  noun  
+end
+
+def teststatement
+  unblinkingeye = Protagonist.new
+  puts "One day, while examining his perfect society, the Unblinking Eye discovered that #{noun(unblinkingeye.purpose.sample)} was being attacked. The Unblinking Eye #{verb(unblinkingeye.purpose.sample)}."
+  puts "He #{verb(unblinkingeye.purpose.sample,"the Communists")}."
 end
