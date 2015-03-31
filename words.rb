@@ -34,7 +34,7 @@ def verb(trait,target = nil)
   return action
 end
 
-def noun(trait)
+def noun(trait) #different locations that are aligned to traits
   noun = nil
   case trait
   when "Knowledge"
