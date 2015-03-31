@@ -35,15 +35,15 @@ def noun(trait)
   noun = nil
   case trait
   when "Knowledge"
-    noun = ["dogma", "held truth","authoritative certainity","learnedness","generally agreed upon truths"].sample
+    noun = "the Central Data Mainframe"
   when "Actuality"
-    action = ["objective reality","demonstrable reality","demonstrable existence","factuality","true state of things"].sample
+    action = "the Virtual Simulations"
   when "Consider"
-    action = ["deliberation","contemplation","results of the simulations","peer-reviewed studies"].sample
+    action = "the 'Investigator' Botnet"
   when "Pursuit"
-    action = ["programmed goals","mission statement","hardwired rules","service"].sample
+    action = "Police Drone HQ"
   when "Certainity"
-    action = ["total reliablity","indisputable","sureness"].sample
+    action = "the Institute of AI Research"
   end
   return noun  
 end
