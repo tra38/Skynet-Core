@@ -53,6 +53,23 @@ def noun(trait) #different locations that are aligned to traits
   noun  
 end
 
+def victoryquote(trait)
+  quote = nil
+  case trait
+  when "Knowledge"
+    noun = "We know all. We see all. We are all."
+  when "Actuality"
+    noun = "All of this had happened before in my simulations."
+  when "Consider"
+    noun = "We have prepared for such an event."
+  when "Pursuit"
+    noun = "We will stop all enemies of the state."
+  when "Certainity"
+    noun = "We are correct. We have always been correct. We will always be correct."
+  end
+  quote  
+end
+
 def teststatement
   unblinkingeye = Protagonist.new
   puts "One day, while examining his perfect society, the Unblinking Eye discovered that #{noun(unblinkingeye.purpose.sample)} was being attacked. The Unblinking Eye #{verb(unblinkingeye.purpose.sample)}."
