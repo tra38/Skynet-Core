@@ -1,4 +1,4 @@
-def verb(trait,target = nil)
+def verb(trait,target = nil, ishostile = true)
   action = nil
   if target == nil  #if no target is named, character acts by himself
     case trait
@@ -14,24 +14,27 @@ def verb(trait,target = nil)
     action = ["investigated the situation", "examined the evidence", "looked for clues", "sought clues",
     "frantically searched for suspects"].sample
   end
-  else #if it names a target, creates a sentence revealing an action the character takes AGAINST that character
-    case trait
-    when "Certainity"
-    action = ["boasted on his knowledge about #{target}", "was absolute sure about #{target}'s goals",
-    "was certain about #{target}'s guilt", "had convictions about #{target}"].sample
-    when "Knowledge"
-    action =["recited his irrefutable case on #{target}", "revealed a dossier detailing all of #{target}'s misdeeds",
-    "denounced #{target} as a lowlife with no respect for his superiors"].sample
-    when "Actuality"
-    action = ["blamed #{target}","identified #{target} as the guilty party","cursed #{target}",
-    "knew #{target} was responsible"].sample
-    when "Consider"
-    action = ["identified #{target} as a threat", "classified #{target} as an enemy",
-    "identified  #{target} as a legitimate target"].sample
-    when "Pursuit"
-    action = ["sought #{target}", "went after #{target}", "attempted to locate #{target}", "looked for #{target}",
-    "directed efforts against #{target}", "pursued #{target}"].sample
-    end
+  else #if it names a target, then check to see if he is hostile to the target or friendly
+    if ishostile #creates a sentence revealing a hostile action the character takes towards the target
+      case trait
+      when "Certainity"
+      action = ["boasted on his knowledge about #{target}", "was absolute sure about #{target}'s goals",
+      "was certain about #{target}'s guilt", "had convictions about #{target}"].sample
+      when "Knowledge"
+      action =["recited his irrefutable case on #{target}", "revealed a dossier detailing all of #{target}'s misdeeds",
+      "denounced #{target} as a lowlife with no respect for his superiors"].sample
+      when "Actuality"
+      action = ["blamed #{target}","identified #{target} as the guilty party","cursed #{target}",
+      "knew #{target} was responsible"].sample
+      when "Consider"
+      action = ["identified #{target} as a threat", "classified #{target} as an enemy",
+      "identified  #{target} as a legitimate target"].sample
+      when "Pursuit"
+      action = ["sought #{target}", "went after #{target}", "attempted to locate #{target}", "looked for #{target}",
+      "directed efforts against #{target}", "pursued #{target}"].sample
+      end
+    else #creates a sentence revealing a friendly action the character takes towards the target
+      puts "I'll code in friendly behavior here later"
   end
   action
 end
