@@ -35,6 +35,7 @@ def verb(trait,target = nil, ishostile = true)
       end
     else #creates a sentence revealing a friendly action the character takes towards the target
       puts "I'll code in friendly behavior here later"
+    end
   end
   action
 end
