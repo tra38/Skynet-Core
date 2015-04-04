@@ -1,7 +1,7 @@
   friendly = "friendly"
   hostile = "hostile"
 
-def verb(trait,target = nil, emotion) #Example of use: verb("Knowledge","Thomas", "friendly")
+def verb(trait,target = nil, emotion = "hostile" ) #Example of use: verb("Knowledge","Thomas", "friendly")
   action = nil
   if target == nil  #if no target is named, character acts by himself
     case trait
