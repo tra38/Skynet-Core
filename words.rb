@@ -18,7 +18,7 @@ def verb(trait,target = nil, emotion) #Example of use: verb("Knowledge","Thomas"
     "frantically searched for suspects"].sample
   end
   else #if it names a target, then check to see if he is hostile to the target or friendly
-    if emotion == "friendly" #creates a sentence revealing a hostile action the character takes towards the target
+    if emotion == "hostile" #creates a sentence revealing a hostile action the character takes towards the target
       case trait
       when "Certainity"
       action = ["boasted on his knowledge about #{target}", "was absolute sure about #{target}'s goals",
@@ -36,7 +36,7 @@ def verb(trait,target = nil, emotion) #Example of use: verb("Knowledge","Thomas"
       action = ["sought #{target}", "went after #{target}", "attempted to locate #{target}", "looked for #{target}",
       "directed efforts against #{target}", "pursued #{target}"].sample
       end
-    elsif emotion == "hostile" #creates a sentence revealing a friendly action the character takes towards the target
+    elsif emotion == "friendly" #creates a sentence revealing a friendly action the character takes towards the target
       puts "I'll code in friendly behavior here later"
     else #if invalid emotion, raises error
       raise ArgumentError, "#{emotion} is an invalid emotion. The emotion must either be friendly or hostile!"
