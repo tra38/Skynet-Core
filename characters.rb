@@ -1,5 +1,13 @@
 class Character
-attr_reader :purpose, :motivation, :methodology, :evaluation, :enemy
+attr_reader :purpose, :motivation, :methodology, :evaluation, :enemy, :total
+  def initialize
+    @total = []
+    @total << @purpose
+    @total << @motivation
+    @total << @methodology
+    @total << @evaluation
+    @total = @total.join(",").split(/,/)
+  end
 end
 
 class Protagonist < Character #the "Hero", the guy who wants stuff done
@@ -21,6 +29,8 @@ def initialize
   #Effect - cares about how to solve the problem, and does not worry about what caused the problem in the first place!
   
   @enemy = Antagonist
+  
+  super
   end
 end
 
