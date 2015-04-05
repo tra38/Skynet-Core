@@ -79,6 +79,48 @@ def victoryquote(trait)
   quote  
 end
 
+def coloradjective
+  %w[black, golden, green, grey, grimy, brown, colorful, grimy, invisible, iridescent, monochromatic,
+  purple, red, red-hot, white, blue, chrome-platted].sample
+end
+
+def hugeadjective
+  %w[mammoth, hulking, humongous, gigantic].sample
+end
+
+def miscapperance #TODO: sort these adjectives into more logical categories
+  %w[ancient, battered, bearded, beautiful, bent, blinding, bubbly, colossal, corrugated,
+  crooked, crusty, cubic, dazzling, delicate, dirty, dry, emaciated, exposed, filthy, floppy, fluffy, foamy,
+  funny-looking, furry, furrowed, fuzzy, glamourous, glittery, glossy, jagged,
+  lickable, limp, microscopic, moldy, mossy, muscular, narrow, orbital, petite, plump, powdery,
+  pretty, ragged, ratty, revealing, shady, short, shriveled, slender, slippery, sloppy, smoggy, soapy,
+  sparkling, spiky, spotless, stout, sweaty, symmetrical, tall, thick, towering, transparent, 
+  ugly, uneven, veiny, wet, whopping, wide, wide-eyed, windy, wooden, wooly, wrinkly].sample  
+
+def badmood
+  %w[aggravated, angry, ashamed, bittersweet, cranky, disappointed, emo, envious, evil, frightened, furious
+  guilty, hateful, horrified, humiliated, jealous, raging, remorseful, sad, severe, shock, sorrowful,
+  tormented].sample
+
+def goodmood
+  %w[awed, arrogant, blissful, content, gay, gleeful, happy, joyful, optimistic, pleasured, proud,
+  smug, thanful].sample
+  
+def lovemood
+  %w[devilish, flirty, loving, lustful, naughty].sample
+
+def miscmood
+  %w[bored, cheeky, contemptuous, groggy, hungry, impatient, indifferent, longing, mad, naughty, sullen,
+  surprised].sample
+  
+def adjective.filler #only A-C
+  %w[absolute, academic, acidic, acoustic, active, adaptable, adequate, administrative, advantageous, advisable,
+  aggressive, alien, all-natural,amazing, ambitious, amiable, appealing, appetizing, artsy, assertive, astounding
+  athletic, awful, barbeque, bashful, beloved, bilious, blasphemous, blood-thirsty, bloddy, blue, bold, bouncy,
+  bountiful, brave, breathtaking, bulging, busted, buttery, captivating, casual, celestial, certified, charitable,
+  charming, cheerful, childish, chilly, clever, cold, complimentary, comely, contaminated, cooperative, courageous
+  crackly, criminal, critical, cuddly, cultural, creative].sample
+
 def teststatement
   unblinkingeye = Protagonist.new
   puts "One day, while examining his perfect society, the Unblinking Eye discovered that #{noun(unblinkingeye.purpose.sample)} was being attacked. The Unblinking Eye #{verb(unblinkingeye.purpose.sample)}."
