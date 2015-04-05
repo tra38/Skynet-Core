@@ -120,7 +120,7 @@ def miscmood
 def filleradjective #only A-C, there's probably no more reason to add D-Z, as these are really just filler words
   %w[absolute, academic, acidic, acoustic, active, adaptable, adequate, administrative, advantageous, advisable,
   aggressive, alien, all-natural,amazing, ambitious, amiable, appealing, appetizing, artsy, assertive, astounding
-  athletic, awful, barbeque, bashful, beloved, bilious, blasphemous, blood-thirsty, bloddy, blue, bold, bouncy,
+  athletic, awful, barbeque, bashful, beloved, bilious, blasphemous, blood-thirsty, bloddy, bold, bouncy,
   bountiful, brave, breathtaking, bulging, busted, buttery, captivating, casual, celestial, certified, charitable,
   charming, cheerful, childish, chilly, clever, cold, complimentary, comely, contaminated, cooperative, courageous
   crackly, criminal, critical, cuddly, cultural, creative].sample
