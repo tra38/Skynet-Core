@@ -1,6 +1,7 @@
   friendly = "friendly"
   hostile = "hostile"
 
+#TODO: Add more verbs
 def verb(trait,target = nil, emotion = "hostile" ) #Example of use: verb("Knowledge","Thomas", "friendly")
   action = nil
   if target == nil  #if no target is named, character acts by himself
@@ -45,6 +46,7 @@ def verb(trait,target = nil, emotion = "hostile" ) #Example of use: verb("Knowle
   action
 end
 
+#TODO: Limit the nouns being used, but track their state?
 def noun(trait) #different locations that are aligned to traits
   noun = nil
   case trait
@@ -62,6 +64,7 @@ def noun(trait) #different locations that are aligned to traits
   noun  
 end
 
+#TODO: Add more quotes!
 def victoryquote(trait)
   quote = nil
   case trait
@@ -79,6 +82,7 @@ def victoryquote(trait)
   quote  
 end
 
+#TODO: test all adjectives below this line
 def coloradjective
   %w[black, golden, green, grey, grimy, brown, colorful, grimy, invisible, iridescent, monochromatic,
   purple, red, red-hot, white, blue, chrome-platted].sample
@@ -113,13 +117,15 @@ def miscmood
   %w[bored, cheeky, contemptuous, groggy, hungry, impatient, indifferent, longing, mad, naughty, sullen,
   surprised].sample
   
-def adjective.filler #only A-C
+def filleradjective #only A-C, there's probably no more reason to add D-Z, as these are really just filler words
   %w[absolute, academic, acidic, acoustic, active, adaptable, adequate, administrative, advantageous, advisable,
   aggressive, alien, all-natural,amazing, ambitious, amiable, appealing, appetizing, artsy, assertive, astounding
   athletic, awful, barbeque, bashful, beloved, bilious, blasphemous, blood-thirsty, bloddy, blue, bold, bouncy,
   bountiful, brave, breathtaking, bulging, busted, buttery, captivating, casual, celestial, certified, charitable,
   charming, cheerful, childish, chilly, clever, cold, complimentary, comely, contaminated, cooperative, courageous
   crackly, criminal, critical, cuddly, cultural, creative].sample
+  
+#TODO: Add adverbs! These adverbs can be useful to describe the trait-specific verbs
 
 def teststatement
   unblinkingeye = Protagonist.new
