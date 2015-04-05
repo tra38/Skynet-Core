@@ -2,11 +2,7 @@ class Character
 attr_reader :purpose, :motivation, :methodology, :evaluation, :enemy, :total
   def initialize
     @total = []
-    @total << @purpose
-    @total << @motivation
-    @total << @methodology
-    @total << @evaluation
-    @total = @total.join(",").split(/,/)
+    @total = @purpose+@motivation+@methodology+@evaluation
   end
 end
 
@@ -53,6 +49,8 @@ def initialize
   #Cause - cares about addressing the root causes of the problem, and ignores the actual problem.
   
   @enemy = Protagonist
+  
+  super
 end
 end
 
@@ -75,6 +73,8 @@ def initialize
   #Unending - believes that Society can live forever and will live forever
   
   @enemy = Guardian
+  
+  super
 end
 end
 
@@ -98,6 +98,8 @@ def initialize
   #Ending - believes that Society will end and is concerned about the aftermath
   
   @enemy = Contagonist
+  
+  super
 end
 end
 
@@ -121,6 +123,8 @@ def initialize
   #Trust - accepts without any proof (if it is logically follows from the theory, then it must be true!)
   
   @enemy = Emotion
+  
+  super
 end
 end
 
@@ -143,6 +147,8 @@ def initialize
   #Test - wants to conduct trials and investigations to determine if something is true (using those oh-so-reliable hunches)
   
   @enemy = Reason
+  
+  super
 end
 end
 
@@ -165,6 +171,8 @@ class Sidekick < Character #a die-hard supporter of another character's actions 
     #Result - cares about the outcomes and consequences of actions
     
     @enemy = Skeptic
+    
+    super
   end
 end
 
@@ -187,5 +195,7 @@ class Skeptic < Character #the "Doubter", thinks his boss does not know what he 
     #Process - cares about making sure actions are done properly, with no worry about the consequences of said action.
     
     @enemy = Sidekick
+    
+    super
   end
 end
