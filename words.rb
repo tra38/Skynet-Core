@@ -108,7 +108,7 @@ def badmood
 
 def goodmood
   %w[awed, arrogant, blissful, content, gay, gleeful, happy, joyful, optimistic, pleasured, proud,
-  smug, thanful].sample
+  smug, thankful].sample
   
 def lovemood
   %w[devilish, flirty, loving, lustful, naughty].sample
