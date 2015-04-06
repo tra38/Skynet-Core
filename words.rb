@@ -125,7 +125,9 @@ def filleradjective #only A-C, there's probably no more reason to add D-Z, as th
   charming, cheerful, childish, chilly, clever, cold, complimentary, comely, contaminated, cooperative, courageous
   crackly, criminal, critical, cuddly, cultural, creative].sample
   
-#TODO: Add adverbs! These adverbs can be useful to describe the trait-specific verbs
+def adverb
+  %w[angrily, anxiously, arrogantly, cautiously, enviously, evilly, frantically, gladly, gleefully, greedily,
+  grudgingly, grumpily, happily, hollowly, patiently, regretfully, sadly, shamefully, terrifyingly, warily].sample
 
 def teststatement
   unblinkingeye = Protagonist.new
