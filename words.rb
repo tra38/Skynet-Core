@@ -43,8 +43,8 @@ def verb(trait,target = nil, emotion = "hostile" ) #Example of use: verb("Knowle
       action = ["sought #{target}", "went after #{target}", "attempted to locate #{target}", "looked for #{target}",
       "directed efforts against #{target}", "pursued #{target}"].sample
       when "Effect"
-      action = ["vowed vengeance against #{target}", "declared that #{target} is a threat to humanity", "desired that
-      #{target} gets punished for his sins""].sample
+      action = ["vowed vengeance against #{target}", "declared that #{target} is a threat to humanity",
+      "denounced the sins of #{target}"].sample
       end
     elsif emotion == "friendly" #creates a sentence revealing a friendly action the character takes towards the target
       case trait
