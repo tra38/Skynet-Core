@@ -58,7 +58,8 @@ def verb(trait,target = nil, emotion = "hostile" ) #Example of use: verb("Knowle
       action = ["identified #{target} as loyal", "classified #{target} as a friend",
       "identified  #{target} as a person to protect"].sample
       when "Pursuit" || "Proaction" || "Effect"
-      action = ["vowed to defend #{target}","desired to save #{target}", "swore to protect #{target}", ].sample
+      action = ["vowed to defend #{target}","desired to save #{target}", "swore to protect #{target}",
+      "saw #{target} as worthy"].sample
       end
     else #if invalid emotion, raises error
       raise ArgumentError, "#{emotion} is an invalid emotion. The emotion must either be friendly or hostile!"
