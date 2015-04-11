@@ -16,15 +16,18 @@ def verb(trait,target = nil, emotion = "hostile" ) #Example of use: verb("Knowle
     "considered his options"].sample
     when "Pursuit"
     action = ["investigated the situation", "examined the evidence", "looked for clues", "sought clues",
-    "frantically searched for suspects"].sample
+    "#{adverb} searched for suspects"].sample
     when "Proaction"
     action = ["was ready to take action", "took charge of the situation", "rushed to the scene of the disaster",
     "ordered his followers to clean up the mess"].sample
+    when "Effect"
+    action = ["was aghast at how the situation came to be", "#{adverb} declared a War on Terror",
+    "vowed that justice shall be served"]
   end
   else #if it names a target, then check to see if he is hostile to the target or friendly
     if emotion == "hostile" #creates a sentence revealing a hostile action the character takes towards the target
       case trait
-      when "Certainity"
+      when "Certainity" || "Proven"
       action = ["boasted on his knowledge about #{target}", "was absolute sure about #{target}'s goals",
       "was certain about #{target}'s guilt", "had convictions about #{target}"].sample
       when "Knowledge"
@@ -36,9 +39,12 @@ def verb(trait,target = nil, emotion = "hostile" ) #Example of use: verb("Knowle
       when "Consider"
       action = ["identified #{target} as a threat", "classified #{target} as an enemy",
       "identified  #{target} as a legitimate target"].sample
-      when "Pursuit"
+      when "Pursuit" || "Proaction"
       action = ["sought #{target}", "went after #{target}", "attempted to locate #{target}", "looked for #{target}",
       "directed efforts against #{target}", "pursued #{target}"].sample
+      when "Effect"
+      action = ["vowed vengeance against #{target}", "declared that #{target} is a threat to humanity", "desired that
+      #{target} gets punished for his sins""].sample
       end
     elsif emotion == "friendly" #creates a sentence revealing a friendly action the character takes towards the target
       case trait
@@ -51,8 +57,8 @@ def verb(trait,target = nil, emotion = "hostile" ) #Example of use: verb("Knowle
       when "Consider"
       action = ["identified #{target} as loyal", "classified #{target} as a friend",
       "identified  #{target} as a person to protect"].sample
-      when "Pursuit"
-      action = ["vowed to defend #{target}","wanted to protect #{target}"].sample
+      when "Pursuit" || "Proaction" || "Effect"
+      action = ["vowed to defend #{target}","desired to save #{target}", "swore to protect #{target}", ].sample
       end
     else #if invalid emotion, raises error
       raise ArgumentError, "#{emotion} is an invalid emotion. The emotion must either be friendly or hostile!"
