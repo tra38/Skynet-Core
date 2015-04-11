@@ -6,8 +6,8 @@ def verb(trait,target = nil, emotion = "hostile" ) #Example of use: verb("Knowle
   action = nil
   if target == nil  #if no target is named, character acts by himself
     case trait
-    when "Knowledge" || "Certainity"
-    action = ["relied on the authoritative certainty of past observations", "remembered what he taught himself","recalled his held truths",
+    when "Knowledge" || "Certainity" || "Proven"
+    action = ["relied on peer-reviewed case studies", "remembered what he taught himself","recalled his held truths",
     "consulted his source code"].sample
     when "Actuality"
     action = ["knew exactly what was going on","grasped the inevitable","predicted this would happen"].sample
@@ -17,6 +17,9 @@ def verb(trait,target = nil, emotion = "hostile" ) #Example of use: verb("Knowle
     when "Pursuit"
     action = ["investigated the situation", "examined the evidence", "looked for clues", "sought clues",
     "frantically searched for suspects"].sample
+    when "Proaction"
+    action = ["was ready to take action", "took charge of the situation", "rushed to the scene of the disaster",
+    "ordered his followers to clean up the mess"].sample
   end
   else #if it names a target, then check to see if he is hostile to the target or friendly
     if emotion == "hostile" #creates a sentence revealing a hostile action the character takes towards the target
@@ -38,30 +41,29 @@ def verb(trait,target = nil, emotion = "hostile" ) #Example of use: verb("Knowle
       "directed efforts against #{target}", "pursued #{target}"].sample
       end
     elsif emotion == "friendly" #creates a sentence revealing a friendly action the character takes towards the target
-      puts "I'll code in friendly behavior here later"
+      case trait
+      when "Certainity"
+      action = ["trusted #{target} implicity", "was certain of #{target}'s purity", "accepted #{target}'s words"].sample
+      when "Knowledge"
+      action =["remembered #{target}'s loyalty", "revealed a dossier praising #{target}"].sample
+      when "Actuality"
+      action = ["knew #{target}'s innermost secrets","knew #{target} can be useful","identified #{target} as innocent"].sample
+      when "Consider"
+      action = ["identified #{target} as loyal", "classified #{target} as a friend",
+      "identified  #{target} as a person to protect"].sample
+      when "Pursuit"
+      action = ["vowed to defend #{target}","wanted to protect #{target}"].sample
+      end
     else #if invalid emotion, raises error
       raise ArgumentError, "#{emotion} is an invalid emotion. The emotion must either be friendly or hostile!"
     end
   end
   action
 end
-
-#TODO: Limit the nouns being used, but track their state?
-def noun(trait) #different locations that are aligned to traits
-  noun = nil
-  case trait
-  when "Knowledge"
-    noun = "the Central Data Mainframe"
-  when "Actuality"
-    noun = "the Virtual Simulations"
-  when "Consider"
-    noun = "the 'Investigator' Botnet"
-  when "Pursuit"
-    noun = "Police Drone HQ"
-  when "Certainity"
-    noun = "the Institute of AI Research"
-  end
-  noun  
+  
+def location
+  ["the Central Data Mainframe", "the Virtual Simulations", "the 'Investigator' Botnet", "Police Drone HQ",
+  "the Institute of AI Research"].sample
 end
 
 #TODO: Add more quotes!
