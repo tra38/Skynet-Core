@@ -1,9 +1,24 @@
 class Character
 attr_reader :purpose, :motivation, :methodology, :evaluation, :enemy, :total
   def initialize
-    @total = []
     @total = @purpose+@motivation+@methodology+@evaluation
   end
+
+#Metaprogramming is the process of writing code that writes code. This
+#specific "metaprogramming" code writes the following method for each
+#"instance variable" in its list:
+#def random_#{array}
+#   array.sample
+#end
+#It makes 5 methods in only 3 lines! Note that I had to "get" the value of
+#the instance variable, before I could use the 'sample' method. If I tried
+#to access "@#array" directly, Ruby will scream at you for trying to use
+#sample on a string. Sample can only be used on arrays, which is why I have to
+#get the value of that instance variable (which happens to be an array).
+  ["purpose", "motivation", "methodology", "evaluation", "total"].each do |array|
+    define_method("random_#{array}") { instance_variable_get("@#{array}").sample }
+  end
+
 end
 
 class Protagonist < Character #the "Hero", the guy who wants stuff done

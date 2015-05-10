@@ -1,8 +1,10 @@
+require_relative 'characters'
+
   friendly = "friendly"
   hostile = "hostile"
 
 #TODO: Add more verbs
-def verb(trait,target = nil, emotion = "hostile" ) #Example of use: verb("Knowledge","Thomas", "friendly")
+def verb(trait, target = nil, emotion = "hostile" ) #Example of use: verb("Knowledge","Thomas", "friendly")
   action = nil
   if target == nil  #if no target is named, character acts by himself
     case trait
@@ -22,7 +24,7 @@ def verb(trait,target = nil, emotion = "hostile" ) #Example of use: verb("Knowle
     "ordered his followers to clean up the mess"].sample
     when "Effect"
     action = ["was aghast at how the situation came to be", "#{adverb} declared a War on Terror",
-    "vowed that justice shall be served"]
+    "vowed that justice shall be served"].sample
   end
   else #if it names a target, then check to see if he is hostile to the target or friendly
     if emotion == "hostile" #creates a sentence revealing a hostile action the character takes towards the target
@@ -109,22 +111,27 @@ def miscapperance #TODO: sort these adjectives into more logical categories
   pretty, ragged, ratty, revealing, shady, short, shriveled, slender, slippery, sloppy, smoggy, soapy,
   sparkling, spiky, spotless, stout, sweaty, symmetrical, tall, thick, towering, transparent, 
   ugly, uneven, veiny, wet, whopping, wide, wide-eyed, windy, wooden, wooly, wrinkly].sample  
+end
 
 def badmood
   %w[aggravated, angry, ashamed, bittersweet, cranky, disappointed, emo, envious, evil, frightened, furious
   guilty, hateful, horrified, humiliated, jealous, raging, remorseful, sad, severe, shock, sorrowful,
   tormented].sample
+end
 
 def goodmood
   %w[awed, arrogant, blissful, content, gay, gleeful, happy, joyful, optimistic, pleasured, proud,
   smug, thankful].sample
-  
+end  
+
 def lovemood
   %w[devilish, flirty, loving, lustful, naughty].sample
+end
 
 def miscmood
   %w[bored, cheeky, contemptuous, groggy, hungry, impatient, indifferent, longing, mad, naughty, sullen,
   surprised].sample
+end
   
 def filleradjective #only A-C, there's probably no more reason to add D-Z, as these are really just filler words
   %w[absolute, academic, acidic, acoustic, active, adaptable, adequate, administrative, advantageous, advisable,
@@ -133,13 +140,17 @@ def filleradjective #only A-C, there's probably no more reason to add D-Z, as th
   bountiful, brave, breathtaking, bulging, busted, buttery, captivating, casual, celestial, certified, charitable,
   charming, cheerful, childish, chilly, clever, cold, complimentary, comely, contaminated, cooperative, courageous
   crackly, criminal, critical, cuddly, cultural, creative].sample
+end
   
 def adverb
   %w[angrily, anxiously, arrogantly, cautiously, enviously, evilly, frantically, gladly, gleefully, greedily,
   grudgingly, grumpily, happily, hollowly, patiently, regretfully, sadly, shamefully, terrifyingly, warily].sample
+end
 
 def teststatement
   unblinkingeye = Protagonist.new
-  puts "One day, while examining his perfect society, the Unblinking Eye discovered that #{noun(unblinkingeye.purpose.sample)} was being attacked. The Unblinking Eye #{verb(unblinkingeye.purpose.sample)}."
-  puts "He #{verb(unblinkingeye.purpose.sample,"the Communists")}."
+  puts "One day, while examining his perfect society, the Unblinking Eye discovered that #{location} was being attacked. The Unblinking Eye #{verb(unblinkingeye.random_purpose)}."
+  puts "He #{verb(unblinkingeye.random_purpose,"the Communists")}."
 end
+
+teststatement
