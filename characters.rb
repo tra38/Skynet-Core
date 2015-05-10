@@ -8,7 +8,7 @@ attr_reader :purpose, :motivation, :methodology, :evaluation, :enemy, :total
 #specific "metaprogramming" code writes the following method for each
 #"instance variable" in its list:
 #def random_#{array}
-#   array.sample
+#   @array.sample
 #end
 #It makes 5 methods in only 3 lines! Note that I had to "get" the value of
 #the instance variable, before I could use the 'sample' method. If I tried
