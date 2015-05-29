@@ -61,8 +61,6 @@ class SelfVerb
   end
 end
 
-#These verbs are verbs that are directed at another person, the 'target'. These verbs can be positive...
-#or negative.
 class HostileVerb
   attr_reader :target
 
