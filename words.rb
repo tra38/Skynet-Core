@@ -3,17 +3,15 @@ require_relative 'characters'
   friendly = "friendly"
   hostile = "hostile"
 
-  def verb(trait, target = nil, emotion = "hostile" ) #Example of use: verb("Knowledge","Thomas", "friendly")
-    emotion = emotion.to_s
-    target = target.to_s
+  def verb(trait, target = nil, emotion = :hostile ) #Example of use: verb("Knowledge","Thomas", "friendly")
     trait.downcase!
     if target == nil
       SelfVerb.new.send "#{trait}"
     else
       case emotion
-      when "hostile"
+      when :hostile
       HostileVerb.new(target).send "#{trait}"
-      when "friendly"
+      when :friendly
       FriendlyVerb.new(target).send "#{trait}"
       else
         raise ArgumentError, "#{emotion} is an invalid emotion. The emotion must either be friendly or hostile!"
