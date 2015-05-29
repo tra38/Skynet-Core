@@ -20,6 +20,7 @@ require_relative 'characters'
     end
   end
 
+#TODO: Add more verbs
 class SelfVerb
   def knowledge
   ["relied on peer-reviewed case studies", "remembered what he taught himself","recalled his held truths",
