@@ -3,71 +3,152 @@ require_relative 'characters'
   friendly = "friendly"
   hostile = "hostile"
 
-#TODO: Add more verbs
-def verb(trait, target = nil, emotion = "hostile" ) #Example of use: verb("Knowledge","Thomas", "friendly")
-  action = nil
-  if target == nil  #if no target is named, character acts by himself
-    case trait
-    when "Knowledge" || "Certainity" || "Proven"
-    action = ["relied on peer-reviewed case studies", "remembered what he taught himself","recalled his held truths",
-    "consulted his source code"].sample
-    when "Actuality"
-    action = ["knew exactly what was going on","grasped the inevitable","predicted this would happen"].sample
-    when "Consider"
-    action = ["mulled his options","deliberated","contemplated carefully","ran computer simulations","pondered","searched the lookup tables",
-    "considered his options"].sample
-    when "Pursuit"
-    action = ["investigated the situation", "examined the evidence", "looked for clues", "sought clues",
-    "#{adverb} searched for suspects"].sample
-    when "Proaction"
-    action = ["was ready to take action", "took charge of the situation", "rushed to the scene of the disaster",
-    "ordered his followers to clean up the mess"].sample
-    when "Effect"
-    action = ["was aghast at how the situation came to be", "#{adverb} declared a War on Terror",
-    "vowed that justice shall be served"].sample
-  end
-  else #if it names a target, then check to see if he is hostile to the target or friendly
-    if emotion == "hostile" #creates a sentence revealing a hostile action the character takes towards the target
-      case trait
-      when "Certainity" || "Proven"
-      action = ["boasted on his knowledge about #{target}", "was absolute sure about #{target}'s goals",
-      "was certain about #{target}'s guilt", "had convictions about #{target}"].sample
-      when "Knowledge"
-      action =["recited his irrefutable case on #{target}", "revealed a dossier detailing all of #{target}'s misdeeds",
-      "denounced #{target} as a lowlife with no respect for his superiors"].sample
-      when "Actuality"
-      action = ["blamed #{target}","identified #{target} as the guilty party","cursed #{target}",
-      "knew #{target} was responsible"].sample
-      when "Consider"
-      action = ["identified #{target} as a threat", "classified #{target} as an enemy",
-      "identified  #{target} as a legitimate target"].sample
-      when "Pursuit" || "Proaction"
-      action = ["sought #{target}", "went after #{target}", "attempted to locate #{target}", "looked for #{target}",
-      "directed efforts against #{target}", "pursued #{target}"].sample
-      when "Effect"
-      action = ["vowed vengeance against #{target}", "declared that #{target} is a threat to humanity",
-      "denounced the sins of #{target}"].sample
+  def verb(trait, target = nil, emotion = "hostile" ) #Example of use: verb("Knowledge","Thomas", "friendly")
+    emotion = emotion.to_s
+    trait.downcase!
+    if target == nil
+      SelfVerb.new.send "#{trait}"
+    else
+      case emotion
+      when "hostile"
+      HostileVerb.new(target).send "#{trait}"
+      when "friendly"
+      FriendlyVerb.new(target).send "#{trait}"
+      else
+        raise ArgumentError, "#{emotion} is an invalid emotion. The emotion must either be friendly or hostile!"
       end
-    elsif emotion == "friendly" #creates a sentence revealing a friendly action the character takes towards the target
-      case trait
-      when "Certainity"
-      action = ["trusted #{target} implicity", "was certain of #{target}'s purity", "accepted #{target}'s words"].sample
-      when "Knowledge"
-      action =["remembered #{target}'s loyalty", "revealed a dossier praising #{target}"].sample
-      when "Actuality"
-      action = ["knew #{target}'s innermost secrets","knew #{target} can be useful","identified #{target} as innocent"].sample
-      when "Consider"
-      action = ["identified #{target} as loyal", "classified #{target} as a friend",
-      "identified  #{target} as a person to protect"].sample
-      when "Pursuit" || "Proaction" || "Effect"
-      action = ["vowed to defend #{target}","desired to save #{target}", "swore to protect #{target}",
-      "saw #{target} as worthy"].sample
-      end
-    else #if invalid emotion, raises error
-      raise ArgumentError, "#{emotion} is an invalid emotion. The emotion must either be friendly or hostile!"
     end
   end
-  action
+
+class SelfVerb
+  def knowledge
+  ["relied on peer-reviewed case studies", "remembered what he taught himself","recalled his held truths",
+    "consulted his source code"].sample
+  end
+
+  def certainity
+  ["relied on peer-reviewed case studies", "remembered what he taught himself","recalled his held truths",
+    "consulted his source code"].sample
+  end
+
+  def proven
+    ["relied on peer-reviewed case studies", "remembered what he taught himself","recalled his held truths",
+    "consulted his source code"].sample
+  end
+
+  def actuality
+    ["knew exactly what was going on","grasped the inevitable","predicted this would happen"].sample
+  end
+
+  def consider
+    ["mulled his options","deliberated","contemplated carefully","ran computer simulations","pondered","searched the lookup tables",
+    "considered his options"].sample
+  end
+
+  def pursuit
+    ["investigated the situation", "examined the evidence", "looked for clues", "sought clues",
+    "#{adverb} searched for suspects"].sample
+  end
+
+  def proaction
+    ["was ready to take action", "took charge of the situation", "rushed to the scene of the disaster",
+    "ordered his followers to clean up the mess"].sample
+  end
+
+  def effect
+    ["was aghast at how the situation came to be", "#{adverb} declared a War on Terror",
+    "vowed that justice shall be served"].sample
+  end
+end
+
+#These verbs are verbs that are directed at another person, the 'target'. These verbs can be positive...
+#or negative.
+class HostileVerb
+  attr_reader :target
+
+  def initialize(target)
+    @target = target
+  end
+
+  def certainity
+      ["boasted on his knowledge about #{target}", "was absolute sure about #{target}'s goals",
+      "was certain about #{target}'s guilt", "had convictions about #{target}"].sample
+  end
+
+  def proven
+      ["boasted on his knowledge about #{target}", "was absolute sure about #{target}'s goals",
+      "was certain about #{target}'s guilt", "had convictions about #{target}"].sample
+  end
+
+  def knowledge
+    ["recited his irrefutable case on #{target}", "revealed a dossier detailing all of #{target}'s misdeeds",
+      "denounced #{target} as a lowlife with no respect for his superiors"].sample
+  end
+
+  def actuality
+    ["blamed #{target}","identified #{target} as the guilty party","cursed #{target}",
+      "knew #{target} was responsible"].sample
+  end
+
+  def consider
+    ["identified #{target} as a threat", "classified #{target} as an enemy",
+      "identified  #{target} as a legitimate target"].sample
+  end
+
+  def pursuit
+    ["sought #{target}", "went after #{target}", "attempted to locate #{target}", "looked for #{target}",
+      "directed efforts against #{target}", "pursued #{target}"].sample
+  end
+
+  def proaction
+    ["sought #{target}", "went after #{target}", "attempted to locate #{target}", "looked for #{target}",
+      "directed efforts against #{target}", "pursued #{target}"].sample
+  end
+
+  def effect
+    ["vowed vengeance against #{target}", "declared that #{target} is a threat to humanity",
+      "denounced the sins of #{target}"].sample
+  end
+end
+
+class FriendlyVerb
+  attr_reader :target
+
+  def initialize(target)
+    @target = target
+  end
+
+  def certainity
+    ["trusted #{target} implicity", "was certain of #{target}'s purity", "accepted #{target}'s words"].sample
+  end
+
+  def knowledge
+    ["remembered #{target}'s loyalty", "revealed a dossier praising #{target}"].sample
+  end
+
+  def actuality
+    ["knew #{target}'s innermost secrets","knew #{target} can be useful","identified #{target} as innocent"].sample
+  end
+
+  def consider
+    ["identified #{target} as loyal", "classified #{target} as a friend",
+      "identified  #{target} as a person to protect"].sample
+  end
+
+  def pursuit
+    ["vowed to defend #{target}","desired to save #{target}", "swore to protect #{target}",
+      "saw #{target} as worthy"].sample
+  end
+
+  def proaction
+    ["vowed to defend #{target}","desired to save #{target}", "swore to protect #{target}",
+      "saw #{target} as worthy"].sample
+  end
+
+  def effect
+    ["vowed to defend #{target}","desired to save #{target}", "swore to protect #{target}",
+      "saw #{target} as worthy"].sample
+  end
 end
   
 def location
@@ -153,4 +234,10 @@ def teststatement
   puts "He #{verb(unblinkingeye.random_purpose,"the Communists")}."
 end
 
+def error_trigger
+  unblinkingeye = Protagonist.new
+  puts "#{verb(unblinkingeye.random_purpose,"socialism","madly")}"
+end
+
 teststatement
+error_trigger
