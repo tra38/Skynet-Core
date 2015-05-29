@@ -5,6 +5,7 @@ require_relative 'characters'
 
   def verb(trait, target = nil, emotion = "hostile" ) #Example of use: verb("Knowledge","Thomas", "friendly")
     emotion = emotion.to_s
+    target = target.to_s
     trait.downcase!
     if target == nil
       SelfVerb.new.send "#{trait}"
@@ -235,7 +236,7 @@ end
 
 def error_trigger
   unblinkingeye = Protagonist.new
-  puts "#{verb(unblinkingeye.random_purpose,"socialism","madly")}"
+  puts "#{verb(unblinkingeye.random_purpose,"socialism",:madly)}"
 end
 
 teststatement
