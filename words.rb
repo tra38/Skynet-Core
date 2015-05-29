@@ -1,9 +1,6 @@
 require_relative 'characters'
 
-  friendly = "friendly"
-  hostile = "hostile"
-
-  def verb(trait, target = nil, emotion = :hostile ) #Example of use: verb("Knowledge","Thomas", "friendly")
+  def verb(trait, target = nil, emotion = :hostile ) #Example of use: verb("Knowledge","Thomas", :friendly)
     trait.downcase!
     if target == nil
       SelfVerb.new.send "#{trait}"
