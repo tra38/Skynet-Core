@@ -58,7 +58,7 @@ class Antagonist < Character #the "Villian", the guy standing in the way of the 
     #Potentiality - is unsure whether his action will lead to the correct outcome, but will still take risks when necessary
     #Reaction - will wait until a crisis occurs, and then responds accordingly 
     
-    @evaluation = ["Unproven, Cause"]
+    @evaluation = ["Unproven", "Cause"]
     #Unproven - believes that his ideas may still be actually wrong, no matter how many previous tests are done
     #Cause - cares about addressing the root causes of the problem, and ignores the actual problem.
     
@@ -138,7 +138,7 @@ end
 
 class Emotion < Character #uses passion and intuition in desicion-making
   def post_initialize
-    @purpose = ["Desire","Self-Aware"]
+    @purpose = ["Desire","SelfAware"]
     #Desire - wants to improve society
     #Self-Aware - knows about his own self
     
