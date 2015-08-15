@@ -1,8 +1,8 @@
 class Character
 attr_reader :purpose, :motivation, :methodology, :evaluation, :enemy, :total
   def initialize
-    @total = @purpose+@motivation+@methodology+@evaluation
     post_initialize
+    @total = @purpose+@motivation+@methodology+@evaluation
   end
 
 #Metaprogramming is the process of writing code that writes code. This
