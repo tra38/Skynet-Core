@@ -14,7 +14,7 @@ Antagonist: &Antagonist
   - Potentiality
   - Reaction
   #Potentiality - is unsure whether his action will lead to the correct outcome, but will still take risks when necessary
-  #Reaction - will wait until a crisis occurs, and then responds accordingly 
+  #Reaction - will wait until a crisis occurs, and then responds accordingly
  Evaluation:
   - Unproven
   - Cause
@@ -32,7 +32,7 @@ Protagonist: &Protagonist
   - Consider
   - Pursuit
   #Consider - will latch onto a goal and refuse to let it go!
-  #Pursuit - drive to go after a goal or a hated enemy 
+  #Pursuit - drive to go after a goal or a hated enemy
  Methodology:
   - Certainty
   - Proaction
@@ -79,7 +79,7 @@ Guardian: &Guardian
   - Help
   #Conscience - forgoing immedidate benefits, because of future consequences
   #Help - helping somebody else's plans, either intentionally or by accident
- Reduction:
+ Methodology:
   - Reduction
   - Evaluation
   #Reduction - determines what the current situation is by weighing odds carefully and choosing the most likely explaination
@@ -110,7 +110,7 @@ Reason: &Reason
   #Inaction - prefers to take no action
  Evaluation:
   - Theory
-  - Trust 
+  - Trust
   #Theory - wants to develop a fully-formed casual relationship to explain what is going on, and refuses to accept
   #irrational appeals to "common sense"
   #Trust - accepts without any proof (if it is logically follows from the theory, then it must be true!)
@@ -126,7 +126,7 @@ Emotion: &Emotion
   - Feeling
   - Uncontrolled
   #Feeling - can emotionally sense if something or someone is "right"
-  #Uncontrolled - will spend all his energy in all directions at once  
+  #Uncontrolled - will spend all his energy in all directions at once
  Methodology:
   - Possibility
   - Protection
@@ -196,7 +196,7 @@ Characters:
  Contagonist:
   <<: *Contagonist
   Enemy:
-   <<: *Guardian 
+   <<: *Guardian
  Guardian:
   <<: *Guardian
   Enemy:
