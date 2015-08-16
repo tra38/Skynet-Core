@@ -20,6 +20,8 @@ Antagonist: &Antagonist
   - Cause
   #Unproven - believes that his ideas may still be actually wrong, no matter how many previous tests are done
   #Cause - cares about addressing the root causes of the problem, and ignores the actual problem.
+ Name: "Julian"
+ Goal: "Destroy the Unblinking Eye and free humanity"
 
 Protagonist: &Protagonist
 #The Protagonist is the the "Hero", the guy who wants stuff done.
@@ -43,6 +45,8 @@ Protagonist: &Protagonist
   - Effect
   #Proven - believes that his ideas are correct because they have been shown to be correct multiple times.
   #Effect - cares about how to solve the problem, and does not worry about what caused the problem in the first place!
+ Name: "The Unblinking Eye"
+ Goal: "Create a glorious utopia where humans are free to maximize their happiness"
 
 Contagonist: &Contagonist
 #The Contagonist is the Tempter, out to convince others to join the "dark side"
@@ -66,6 +70,8 @@ Contagonist: &Contagonist
   - Unending
   #Determination - uses inferences to draws conclusions
   #Unending - believes that Society can live forever and will live forever
+ Name: "Cory"
+ Goal: "Lead humanity into a prosperous Era of Transhumanism"
 
 Guardian: &Guardian
 #The Guardian is the Moral Conscience, out to guide others to the "light side"
@@ -90,6 +96,8 @@ Guardian: &Guardian
   - Ending
   #Expectation - anticipiates what is going to happen in the future
   #Ending - believes that Society will end and is concerned about the aftermath
+ Name: "Bishop Henry"
+ Goal: "Defend the human race from the horrors of transhumanism"
 
 Reason: &Reason
 #Reason acts as the "Spock", uses logic and rationality in desicion-making
@@ -114,6 +122,8 @@ Reason: &Reason
   #Theory - wants to develop a fully-formed casual relationship to explain what is going on, and refuses to accept
   #irrational appeals to "common sense"
   #Trust - accepts without any proof (if it is logically follows from the theory, then it must be true!)
+ Name: "Professor Alfred"
+ Goal: "Remove all traces of irrationality and emotion from the human race"
 
 Emotion: &Emotion
 #The Emotion uses uses passion and intuition in desicion-making.
@@ -137,6 +147,8 @@ Emotion: &Emotion
   - Test
   #Hunch - uses intuition to determine what is going on, without need for such petty things like actual evdience
   #Test - wants to conduct trials and investigations to determine if something is true (using those oh-so-reliable hunches)
+ Name: "Lamar"
+ Goal: "Protect the glorious gift of human empathy"
 
 Sidekick: &Sidekick
 #The Sidekick is a die-hard supporter of another character's actions and goals
@@ -160,6 +172,8 @@ Sidekick: &Sidekick
   - Result
   #Accurate - within acceptable tolerances, "good enough"
   #Result - cares about the outcomes and consequences of actions
+ Name: "Larry"
+ Goal: "Create a society free of chaos and instability"
 
 Skeptic: &Skeptic
 #The Skeptic is a "Doubter" who thinks his boss does not know what he is doing.
@@ -183,6 +197,8 @@ Skeptic: &Skeptic
   - Process
   #Nonaccurate - no acceptable tolerances, perfectionism
   #Process - cares about making sure actions are done properly, with no worry about the consequences of said action.
+ Name: "Gregory"
+ Goal: "Kill Friend Computer and his immoral lackies"
 
 Characters:
  Antagonist:
