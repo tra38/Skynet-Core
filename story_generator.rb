@@ -18,6 +18,14 @@ def location
   @words_data["Locations"].sample
 end
 
+def adverb
+  @words_data["Adverbs"].sample
+end
+
+def filler
+  @words_data["Filler"].sample
+end
+
 def word(trait)
   @selfverbs[trait].sample
 end
@@ -43,13 +51,13 @@ puts "One day, while examining his perfect society, the Unblinking Eye discovere
 
 # Test Sentence 2
 puts "At the #{location}, the Tempeter #{random_word(enemy)}. He was happy, as most people
-   were. In the bad old days, the Tempeter would work every day of his life. And he
+   were. In the bad old days, the Tempeter would #{adverb} work every day of his life. And he
    hated it! Now, he no longer has to work. But now the Tempeter was bored. And he wanted to pass
    the time. So the Tempeter had an idea: 'I want to write a poem' The Tempeter was in a happy mood.
 
-   He went to his friend, the Unblinking Eye. The Unblinking Eye #{random_word(main_character)}, and
-   wrote the story. The button analyzed the character’s inner personality and wrote an excellent poem.
+   He #{adverb} went to his friend, the Unblinking Eye. The Unblinking Eye #{random_word(main_character)}, and
+   #{adverb }wrote the story. The #{filler} button analyzed the character’s inner personality and wrote an excellent poem.
 
-   The character looked at the poem. It was great, it was grand, and it was terrible. The character tore it to pieces. The other character was confused. “I only wanted to make you happy, because I wanted you to---”
+   The character looked at the #{filler} poem. It was great, it was grand, and it was terrible. The character tore it to pieces. The other character was confused. “I only wanted to make you happy, because I wanted you to---”
 
    “I wanted to write a poem! Not you!” The first character cried."

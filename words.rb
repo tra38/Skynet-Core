@@ -178,7 +178,7 @@ class FriendlyVerb
 
 
 end
-  
+
 def location
   ["the Central Data Mainframe", "the Virtual Simulations", "the 'Investigator' Botnet", "Police Drone HQ",
   "the Institute of AI Research"].sample
@@ -199,7 +199,7 @@ def victoryquote(trait)
   when "Certainity"
     noun = "We are correct. We have always been correct. We will always be correct."
   end
-  quote  
+  quote
 end
 
 #TODO: test all adjectives below this line
@@ -218,8 +218,8 @@ def miscapperance #TODO: sort these adjectives into more logical categories
   funny-looking, furry, furrowed, fuzzy, glamourous, glittery, glossy, jagged,
   lickable, limp, microscopic, moldy, mossy, muscular, narrow, orbital, petite, plump, powdery,
   pretty, ragged, ratty, revealing, shady, short, shriveled, slender, slippery, sloppy, smoggy, soapy,
-  sparkling, spiky, spotless, stout, sweaty, symmetrical, tall, thick, towering, transparent, 
-  ugly, uneven, veiny, wet, whopping, wide, wide-eyed, windy, wooden, wooly, wrinkly].sample  
+  sparkling, spiky, spotless, stout, sweaty, symmetrical, tall, thick, towering, transparent,
+  ugly, uneven, veiny, wet, whopping, wide, wide-eyed, windy, wooden, wooly, wrinkly].sample
 end
 
 def badmood
@@ -231,7 +231,7 @@ end
 def goodmood
   %w[awed, arrogant, blissful, content, gay, gleeful, happy, joyful, optimistic, pleasured, proud,
   smug, thankful].sample
-end  
+end
 
 def lovemood
   %w[devilish, flirty, loving, lustful, naughty].sample
@@ -241,7 +241,7 @@ def miscmood
   %w[bored, cheeky, contemptuous, groggy, hungry, impatient, indifferent, longing, mad, naughty, sullen,
   surprised].sample
 end
-  
+
 def filleradjective #only A-C, there's probably no more reason to add D-Z, as these are really just filler words
   %w[absolute, academic, acidic, acoustic, active, adaptable, adequate, administrative, advantageous, advisable,
   aggressive, alien, all-natural,amazing, ambitious, amiable, appealing, appetizing, artsy, assertive, astounding
@@ -250,7 +250,7 @@ def filleradjective #only A-C, there's probably no more reason to add D-Z, as th
   charming, cheerful, childish, chilly, clever, cold, complimentary, comely, contaminated, cooperative, courageous
   crackly, criminal, critical, cuddly, cultural, creative].sample
 end
-  
+
 def adverb
   %w[angrily, anxiously, arrogantly, cautiously, enviously, evilly, frantically, gladly, gleefully, greedily,
   grudgingly, grumpily, happily, hollowly, patiently, regretfully, sadly, shamefully, terrifyingly, warily, deeply].sample
